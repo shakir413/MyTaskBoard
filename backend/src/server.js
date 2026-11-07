@@ -11,7 +11,7 @@ app.use(express.json());
 app.get("/api/health", async (req, res) => {
   try {
     const r = await pool.query("SELECT NOW() AS time");
-    res.json({ status: "ok", database: "connected", time: r.rows[0].time });
+    res.json({ status: "okk", database: "connected", time: r.rows[0].time });
   } catch (err) {
     res.status(500).json({ status: "error", database: "unreachable", message: err.message });
   }
